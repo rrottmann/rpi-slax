@@ -1,0 +1,3 @@
+[all]
+initramfs initrd-5.4.51-v7+
+kernel=vmlinuz-5.4.51-v7+
