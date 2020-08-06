@@ -15,4 +15,6 @@ This is an unofficial build of [slax](https://www.slax.org) for Raspberry Pi Sin
 
 ## Bugs
 
-* Right now it boots into systemd and the regular login prompt only with kernel cmdline option `debug` and manually executing `sh init` the first time the debug shell is offered during boot. Then just exiting the debug shell till the OS boots. My guess right now is that somewhere an error occurs and is fixed by executing code twice. 
+* Right now it boots into systemd and the regular login prompt only with kernel cmdline option `debug` and manually executing `sh init` the first time the debug shell is offered during boot. Then just exiting the debug shell till the OS boots. My guess right now is that somewhere an error occurs and is fixed by executing code twice. Seems like the bug is during the first aufs mount/entering the directory. There is a segmentation fault. Executing the init twice during initrd tries it a second time and then it succeeds.
+* Unclean /dev/mmcblk0p1 leads to a failed boot. TODO: fsck.vfat in initramfs
+* wpa_supplicant somehow does not like to talk to systemd everytime.
