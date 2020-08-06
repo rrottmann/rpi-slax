@@ -12,6 +12,10 @@ This is an unofficial build of [slax](https://www.slax.org) for Raspberry Pi Sin
 * Based on [linux-live scripts](https://github.com/Tomas-M/linux-live) with statically compiled dependencies for armv7l
 * Got boot configuration working after great advice from IRC users #debianarm-port on irc.freenode.net (ShorTie, Tenkawa, c0rnelius)
 * Tested on Raspberry Pi 2
+* Used `pureos` for the livekitname so that it is clear, that this is unofficial
+* 01-core.sb is split due to limits of the maximum upload filesize. Need to `cat` the files together after checkout
+* `pack.sh` and `unpack.sh` has been added to inspect the initramfs
+* As further work involves creating lots of squashfs and initramfs images, it is not ideal to work on the SD card. qemu-system-arm would be a good addition for development...
 
 ## Bugs
 
